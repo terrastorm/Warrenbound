@@ -1,0 +1,749 @@
+fileFormatVersion: 2
+guid: 8f1cdb7fdeea827408c98b25539b94fc
+timeCreated: 1474412401
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: Box006
+    100008: Box007
+    100010: Box008
+    100012: Box009
+    100014: Box010
+    100016: Box014
+    100018: Box015
+    100020: Box019
+    100022: Box020
+    100024: Box021
+    100026: Box022
+    100028: Box023
+    100030: Box024
+    100032: Dummy001
+    100034: Dummy002
+    100036: Dummy003
+    100038: Dummy004
+    100040: Dummy005
+    100042: Dummy006
+    100044: Dummy007
+    100046: Dummy008
+    100048: Dummy009
+    100050: Dummy010
+    100052: Dummy011
+    100054: Dummy012
+    100056: Dummy013
+    100058: Dummy014
+    100060: Dummy015
+    100062: Dummy016
+    100064: Dummy018
+    100066: Dummy019
+    100068: Dummy020
+    100070: Dummy021
+    100072: Object001
+    100074: Object002
+    100076: Plane001
+    100078: Plane002
+    100080: Plane003
+    100082: Plane004
+    100084: Plane005
+    100086: Plane006
+    100088: Plane007
+    100090: Plane008
+    100092: //RootNode
+    100094: Spindle001
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: Box006
+    400008: Box007
+    400010: Box008
+    400012: Box009
+    400014: Box010
+    400016: Box014
+    400018: Box015
+    400020: Box019
+    400022: Box020
+    400024: Box021
+    400026: Box022
+    400028: Box023
+    400030: Box024
+    400032: Dummy001
+    400034: Dummy002
+    400036: Dummy003
+    400038: Dummy004
+    400040: Dummy005
+    400042: Dummy006
+    400044: Dummy007
+    400046: Dummy008
+    400048: Dummy009
+    400050: Dummy010
+    400052: Dummy011
+    400054: Dummy012
+    400056: Dummy013
+    400058: Dummy014
+    400060: Dummy015
+    400062: Dummy016
+    400064: Dummy018
+    400066: Dummy019
+    400068: Dummy020
+    400070: Dummy021
+    400072: Object001
+    400074: Object002
+    400076: Plane001
+    400078: Plane002
+    400080: Plane003
+    400082: Plane004
+    400084: Plane005
+    400086: Plane006
+    400088: Plane007
+    400090: Plane008
+    400092: //RootNode
+    400094: Spindle001
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box006
+    2300008: Box007
+    2300010: Box008
+    2300012: Box009
+    2300014: Box010
+    2300016: Box014
+    2300018: Box015
+    2300020: Box019
+    2300022: Box020
+    2300024: Box021
+    2300026: Box022
+    2300028: Box023
+    2300030: Box024
+    2300032: Object001
+    2300034: Object002
+    2300036: Plane001
+    2300038: Plane002
+    2300040: Plane003
+    2300042: Plane004
+    2300044: Plane005
+    2300046: Plane006
+    2300048: Plane007
+    2300050: Plane008
+    2300052: Spindle001
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box006
+    3300008: Box007
+    3300010: Box008
+    3300012: Box009
+    3300014: Box010
+    3300016: Box014
+    3300018: Box015
+    3300020: Box019
+    3300022: Box020
+    3300024: Box021
+    3300026: Box022
+    3300028: Box023
+    3300030: Box024
+    3300032: Object001
+    3300034: Object002
+    3300036: Plane001
+    3300038: Plane002
+    3300040: Plane003
+    3300042: Plane004
+    3300044: Plane005
+    3300046: Plane006
+    3300048: Plane007
+    3300050: Plane008
+    3300052: Spindle001
+    4300000: Box001
+    4300002: Object002
+    4300004: Object001
+    4300006: Box008
+    4300008: Plane006
+    4300010: Plane007
+    4300012: Plane008
+    4300014: Plane005
+    4300016: Plane002
+    4300018: Plane003
+    4300020: Plane004
+    4300022: Plane001
+    4300024: Box010
+    4300026: Box009
+    4300028: Box021
+    4300030: Box020
+    4300032: Box019
+    4300034: Box007
+    4300036: Box014
+    4300038: Box015
+    4300040: Spindle001
+    4300042: Box002
+    4300044: Box003
+    4300046: Box006
+    4300048: Box022
+    4300050: Box024
+    4300052: Box023
+    7400000: Idle
+    7400002: Sneak
+    7400004: Sprint
+    7400006: Death
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy006
+        weight: 1
+      - path: Dummy006/Box001
+        weight: 1
+      - path: Dummy006/Dummy001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane006
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004/Box010
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005/Box009
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Box021
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Box020
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016/Box019
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Object001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Box007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Box014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013/Box015
+        weight: 1
+      - path: Dummy006/Dummy001/Object002
+        weight: 1
+      - path: Dummy006/Dummy007
+        weight: 1
+      - path: Dummy006/Dummy007/Spindle001
+        weight: 1
+      - path: Dummy006/Dummy008
+        weight: 1
+      - path: Dummy006/Dummy008/Box002
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Box003
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010/Box006
+        weight: 1
+      - path: Dummy006/Dummy019
+        weight: 1
+      - path: Dummy006/Dummy019/Box023
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Box022
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021/Box024
+        weight: 1
+      - path: Dummy018
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sprint
+      takeName: Take 001
+      firstFrame: 155
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy006
+        weight: 1
+      - path: Dummy006/Box001
+        weight: 1
+      - path: Dummy006/Dummy001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane006
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004/Box010
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005/Box009
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Box021
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Box020
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016/Box019
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Object001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Box007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Box014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013/Box015
+        weight: 1
+      - path: Dummy006/Dummy001/Object002
+        weight: 1
+      - path: Dummy006/Dummy007
+        weight: 1
+      - path: Dummy006/Dummy007/Spindle001
+        weight: 1
+      - path: Dummy006/Dummy008
+        weight: 1
+      - path: Dummy006/Dummy008/Box002
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Box003
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010/Box006
+        weight: 1
+      - path: Dummy006/Dummy019
+        weight: 1
+      - path: Dummy006/Dummy019/Box023
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Box022
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021/Box024
+        weight: 1
+      - path: Dummy018
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sneak
+      takeName: Take 001
+      firstFrame: 175
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy006
+        weight: 1
+      - path: Dummy006/Box001
+        weight: 1
+      - path: Dummy006/Dummy001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane006
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004/Box010
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005/Box009
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Box021
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Box020
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016/Box019
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Object001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Box007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Box014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013/Box015
+        weight: 1
+      - path: Dummy006/Dummy001/Object002
+        weight: 1
+      - path: Dummy006/Dummy007
+        weight: 1
+      - path: Dummy006/Dummy007/Spindle001
+        weight: 1
+      - path: Dummy006/Dummy008
+        weight: 1
+      - path: Dummy006/Dummy008/Box002
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Box003
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010/Box006
+        weight: 1
+      - path: Dummy006/Dummy019
+        weight: 1
+      - path: Dummy006/Dummy019/Box023
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Box022
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021/Box024
+        weight: 1
+      - path: Dummy018
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 205
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy006
+        weight: 1
+      - path: Dummy006/Box001
+        weight: 1
+      - path: Dummy006/Dummy001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane002
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane003
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane006
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Box008/Plane008
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy004/Box010
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy003/Dummy005/Box009
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Box021
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Box020
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Dummy014/Dummy015/Dummy016/Box019
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy002/Object001
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Box007
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Box014
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013
+        weight: 1
+      - path: Dummy006/Dummy001/Dummy011/Dummy012/Dummy013/Box015
+        weight: 1
+      - path: Dummy006/Dummy001/Object002
+        weight: 1
+      - path: Dummy006/Dummy007
+        weight: 1
+      - path: Dummy006/Dummy007/Spindle001
+        weight: 1
+      - path: Dummy006/Dummy008
+        weight: 1
+      - path: Dummy006/Dummy008/Box002
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Box003
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010
+        weight: 1
+      - path: Dummy006/Dummy008/Dummy009/Dummy010/Box006
+        weight: 1
+      - path: Dummy006/Dummy019
+        weight: 1
+      - path: Dummy006/Dummy019/Box023
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Box022
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021
+        weight: 1
+      - path: Dummy006/Dummy019/Dummy020/Dummy021/Box024
+        weight: 1
+      - path: Dummy018
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
