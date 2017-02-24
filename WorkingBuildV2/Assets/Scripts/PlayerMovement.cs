@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //Debug.Log(navMeshAgent.remainingDistance);
+        // Stopping the rabbits from moving
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance &&
             (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f) && stopMovement) {
             myAnimator.Play("Idle");    // Start playing idle animation
