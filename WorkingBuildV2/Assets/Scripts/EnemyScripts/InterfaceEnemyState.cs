@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public interface InterfaceEnemyState
-{
+public interface InterfaceEnemyState {
     void Update();
 
-    void OnTriggerEnter(Collider other);
+    void OnTriggerEnter( Collider other );
+
+    void OnTriggerStay( Collider other );
 
     void ToPatrolState();
 

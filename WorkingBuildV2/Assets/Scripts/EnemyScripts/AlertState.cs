@@ -1,33 +1,36 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 // Search for players near enemy
 public class AlertState : InterfaceEnemyState {
 
     private readonly StatePatternEnemy enemy;
     private float searchTimer;
+    private Vector3 targetDir;
 
-    public AlertState(StatePatternEnemy statePatternEnemy) //Constructor
+    public AlertState( StatePatternEnemy statePatternEnemy ) //Constructor
     {
         enemy = statePatternEnemy;
     }
 
-    public void Update()
-    {
+    public void Update() {
         Look();
         Search();
     }
+
+    /*======================State Functions======================*/
 
     private void Look() //Looks for player directly in front of enemy and detects if it is hit with ray from enemy eyes
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-            && hit.collider.CompareTag("Player")) {
+        if ( Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
+            && hit.collider.CompareTag("Player") ) {
             enemy.chaseTarget = hit.transform;
             // check to see if hit.transform is close enough to attack
             // if so attack player
-            if (Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist) {
+            if ( Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist ) {
                 hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
 
                 enemy.transform.LookAt(hit.transform);
@@ -42,23 +45,54 @@ public class AlertState : InterfaceEnemyState {
 
     private void Search() {
         enemy.meshRendererFlag.material.color = Color.yellow;
-        enemy.navMeshAgent.Stop();
+        enemy.navMeshAgent.ResetPath();
         enemy.transform.Rotate(0, enemy.searchingTurnSpeed * Time.deltaTime, 0);
         searchTimer += Time.deltaTime;
 
-        if (searchTimer >= enemy.searchingDuration) {
+        if ( searchTimer >= enemy.searchingDuration ) {
             ToPatrolState();
         }
     }
 
-    public void OnTriggerEnter(Collider other) // is this pointless?
+    /*======================Collision/Trigger======================*/
+
+    public void OnTriggerEnter( Collider other ) // is this pointless?
     {
-        // if the enemy hits the player, don't we want to attack?
-        if (other.gameObject.CompareTag("Player")) {
-            other.GetComponent<PlayerMovement>().KillPlayer();
-            ToAttackState();
+        //// if the enemy hits the player, don't we want to attack?
+        //if (other.gameObject.CompareTag("Player")) {
+        //    other.GetComponent<PlayerMovement>().KillPlayer();
+        //    ToAttackState();
+        //}
+    }
+
+    // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
+    void InterfaceEnemyState.OnTriggerStay( Collider other ) {
+        Debug.Log("Kill me please");
+        // Check to see if player is within view distance
+        if ( other.gameObject.CompareTag("Player") ) {
+            // Check if Player is not hiding
+            if ( other.gameObject.layer != 8 ) {
+                // Direction of player from enemy
+                targetDir = other.transform.position - enemy.transform.position;
+                // Check to see if player is within view range 
+                if ( Vector3.Angle(targetDir, enemy.transform.forward) <= 75 ) {
+                    enemy.chaseTarget = other.transform;
+
+                    // Check to see if hit.transform is close enough to attack
+                    // If so attack player
+                    if ( Vector3.Distance(other.transform.position, enemy.transform.position) <= enemy.killDist ) {
+                        other.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+                        enemy.transform.LookAt(other.transform);
+                        ToAttackState();
+                    }
+                } else { // Else chase seen player
+                    ToChaseState();
+                }
+            }
         }
     }
+
+    /*======================Switch State======================*/
 
     public void ToPatrolState() // player was not seen, continue patrolling area
     {
@@ -80,7 +114,7 @@ public class AlertState : InterfaceEnemyState {
     }
 
     public void ToAttackState() {
-        enemy.navMeshAgent.Stop();
+        enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         searchTimer = 0f; //Saw the player and reset the timer
         enemy.myAnimator.Play("Feast");

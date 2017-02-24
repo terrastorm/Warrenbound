@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour {
         //Debug.Log(navMeshAgent.remainingDistance);
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance &&
             (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f) && stopMovement) {
-            Debug.Log("Idleing");
             myAnimator.Play("Idle");    // Start playing idle animation
             stopMovement = false;       // Stop this block of code from running until needed again
             SneakSound.Stop();
@@ -45,11 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Used to start moving rabbits toward destination when set with PlayerSelection script
     public void MoveUnit() {
-        if (hiding) {
-            gameObject.layer = 0;
-        }
         myAnimator.Play("Sneak");               // Start playing sneak animation
-        Debug.Log("Sneaking");
         PlaySound(SneakSound);
         navMeshAgent.destination = dest.point;  // Set destination that rabbit will follow
         navMeshAgent.Resume();                  // Start moving the rabbit towards the point
@@ -67,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void KillPlayer() {
         navMeshAgent.velocity = Vector3.zero;
-        navMeshAgent.Stop();
+        navMeshAgent.ResetPath();
         myAnimator.Play("Death");
         transform.tag = "Dead";
         transform.Find("Selected marker").gameObject.SetActive(false);
@@ -76,26 +71,22 @@ public class PlayerMovement : MonoBehaviour {
         GetComponent<PlayerMovement>().enabled = false;
     }
 
-    void OnCollisionEnter (Collision col) {
-        //if (col.transform.tag == "Bush") {
-        //    navMeshAgent.velocity = Vector3.zero;
-        //    navMeshAgent.Stop();
-        //    gameObject.layer = 2;
-        //    hiding = true;
-        //    Debug.Log(gameObject.layer);
-        //}
+    //==============================HIDING==============================
+    void OnTriggerEnter( Collider col ) {
+        if ( col.transform.tag == "Bush" ) {
+            navMeshAgent.ResetPath();
+            gameObject.layer = 8;
+            Debug.Log(gameObject.layer);
+        }
     }
 
-    //public void SneakMusic () {
-    //    SneakSound.Play();
-    //}
-    public void RunMusic () {
-        RunSound.Play();
-    }
-    public void DeathMusic () {
-        DeathSound.Play();
+    void OnTriggerExit( Collider col ) {
+        if ( col.transform.tag == "Bush" ) {
+            gameObject.layer = 1;
+        }
     }
 
+    //==============================SOUND==============================
     public void PlaySound (AudioSource sound)
     {
         sound.Play();

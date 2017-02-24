@@ -1,43 +1,45 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 // Patrol predefined area
-public class PatrolState : InterfaceEnemyState
-{
+public class PatrolState : InterfaceEnemyState {
     private readonly StatePatternEnemy enemy;
     private int nextWayPoint;
+    private Vector3 targetDir;
 
-    public PatrolState (StatePatternEnemy statePatternEnemy) //Constructor
+    public PatrolState( StatePatternEnemy statePatternEnemy ) //Constructor
     {
         enemy = statePatternEnemy;
     }
 
-    public void Update()
-    {
-        Look();
+    public void Update() {
+        //Look();
         Patrol();
     }
 
-    private void Look() //Looks for player directly in front of enemy and detects if it is hit with ray from enemy eyes
-    {
-        RaycastHit hit;
+    /*======================State Functions======================*/
 
-        if (Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-            && hit.collider.CompareTag("Player")) {
-            enemy.chaseTarget = hit.transform;
-            // check to see if hit.transform is close enough to attack
-            // if so attack player
-            if (Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist) {
-                hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+    //private void Look() //Looks for player directly in front of enemy and detects if it is hit with ray from enemy eyes
+    //{
+    //    RaycastHit hit;
 
-                enemy.transform.LookAt(hit.transform);
-                enemy.playerSelection.RemovePlayers();
-                ToAttackState();
-            }
-            // else chase seen player
-            else ToChaseState();
-        }
-    }
+    //    if (Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
+    //        && hit.collider.CompareTag("Player")) {
+    //        enemy.chaseTarget = hit.transform;
+    //        // check to see if hit.transform is close enough to attack
+    //        // if so attack player
+    //        if (Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist) {
+    //            hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+
+    //            enemy.transform.LookAt(hit.transform);
+    //            enemy.playerSelection.RemovePlayers();
+    //            ToAttackState();
+    //        }
+    //        // else chase seen player
+    //        else ToChaseState();
+    //    }
+    //}
 
     void Patrol() //Patrols the different waypoints
     {
@@ -48,23 +50,53 @@ public class PatrolState : InterfaceEnemyState
         enemy.navMeshAgent.Resume();
         // move the enemy player with the navmesh
 
-        if (enemy.navMeshAgent.remainingDistance <= enemy.navMeshAgent.stoppingDistance
-            && !enemy.navMeshAgent.pathPending) {
+        if ( enemy.navMeshAgent.remainingDistance <= enemy.navMeshAgent.stoppingDistance
+            && !enemy.navMeshAgent.pathPending ) {
             // check to see if enemy is close to its destination and has another point to follow
             nextWayPoint = (nextWayPoint + 1) % enemy.wayPoints.Length;
             // iterate through waypoint positions
         }
     }
 
-    public void OnTriggerEnter(Collider other) //detects if player is hit
+    /*======================Collision/Trigger======================*/
+
+    public void OnTriggerEnter( Collider other ) //detects if player is hit
     {
         // if the enemy hits the player, don't we want to attack?
-        if (other.gameObject.CompareTag("Player"))
-        {
+        if ( other.gameObject.CompareTag("Player") ) {
             other.GetComponent<PlayerMovement>().KillPlayer();
             ToAttackState();
         }
     }
+
+    // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
+    void InterfaceEnemyState.OnTriggerStay( Collider other ) {
+        Debug.Log("Kill me please");
+        // Check to see if player is within view distance
+        if ( other.gameObject.CompareTag("Player") ) {
+            // Check if Player is not hiding
+            if ( other.gameObject.layer != 8 ) {
+                // Direction of player from enemy
+                targetDir = other.transform.position - enemy.transform.position;
+                // Check to see if player is within view range 
+                if ( Vector3.Angle(targetDir, enemy.transform.forward) <= 75 ) {
+                    enemy.chaseTarget = other.transform;
+
+                    // Check to see if hit.transform is close enough to attack
+                    // If so attack player
+                    if ( Vector3.Distance(other.transform.position, enemy.transform.position) <= enemy.killDist ) {
+                        other.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
+                        enemy.transform.LookAt(other.transform);
+                        ToAttackState();
+                    }
+                } else { // Else chase seen player
+                    ToChaseState();
+                }
+            }
+        }
+    }
+
+    /*======================Switch State======================*/
 
     public void ToPatrolState() // do nothing
     {
@@ -85,7 +117,8 @@ public class PatrolState : InterfaceEnemyState
     }
 
     public void ToAttackState() {
-        enemy.navMeshAgent.Stop();
+        enemy.playerSelection.RemovePlayers();
+        enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         enemy.myAnimator.Play("Feast");
     }

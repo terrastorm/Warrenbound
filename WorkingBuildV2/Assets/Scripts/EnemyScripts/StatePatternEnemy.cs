@@ -16,17 +16,24 @@ public class StatePatternEnemy : MonoBehaviour {
     public AudioSource Feast;                           //Used to play the feasting noise
     public AudioSource ChaseMusic;                      //used to play the chase music
 
-    [HideInInspector] public Transform chaseTarget;                 // Player object to chase
-    [HideInInspector] public InterfaceEnemyState currentState;      // Keep track of what enemy is currently doing
-    [HideInInspector] public ChaseState chaseState;                 // Functions to chase player
-    [HideInInspector] public AlertState alertState;                 // Functions to look for player
-    [HideInInspector] public PatrolState patrolState;               // Functions to patrol area
-    [HideInInspector] public AttackState attackState;               // Functions for attacking player
-    [HideInInspector] public UnityEngine.AI.NavMeshAgent navMeshAgent;             // Move the enemy
-    [HideInInspector] public PlayerSelection playerSelection;       // Delete rabbits from list when dead
+    [HideInInspector]
+    public Transform chaseTarget;                 // Player object to chase
+    [HideInInspector]
+    public InterfaceEnemyState currentState;      // Keep track of what enemy is currently doing
+    [HideInInspector]
+    public ChaseState chaseState;                 // Functions to chase player
+    [HideInInspector]
+    public AlertState alertState;                 // Functions to look for player
+    [HideInInspector]
+    public PatrolState patrolState;               // Functions to patrol area
+    [HideInInspector]
+    public AttackState attackState;               // Functions for attacking player
+    [HideInInspector]
+    public UnityEngine.AI.NavMeshAgent navMeshAgent;             // Move the enemy
+    [HideInInspector]
+    public PlayerSelection playerSelection;       // Delete rabbits from list when dead
 
-    private void Awake()
-    {
+    private void Awake() {
         chaseState = new ChaseState(this);
         alertState = new AlertState(this);
         patrolState = new PatrolState(this);
@@ -36,29 +43,17 @@ public class StatePatternEnemy : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start ()
-    {
+    void Start() {
         currentState = patrolState;
         myAnimator.Play("Walk");
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        currentState.Update();
-	}
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        currentState.OnTriggerEnter(other);
     }
 
-    /*public void Feasting() 
-    {
-        Feast.Play();
+    // Update is called once per frame
+    void Update() {
+        currentState.Update();
     }
-    public void PanicMusic()
-    {
-        ChaseMusic.Play();
-   }*/
+
+    private void OnTriggerEnter( Collider other ) {
+        currentState.OnTriggerEnter(other);
+    }
 }

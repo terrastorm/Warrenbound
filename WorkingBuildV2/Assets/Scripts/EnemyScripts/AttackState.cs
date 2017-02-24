@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class AttackState: InterfaceEnemyState {
+public class AttackState : InterfaceEnemyState {
     private readonly StatePatternEnemy enemy;
     private float eatTimer;
 
-    public AttackState(StatePatternEnemy statePatternEnemy) //Constructor
+    public AttackState( StatePatternEnemy statePatternEnemy ) //Constructor
     {
         enemy = statePatternEnemy;
     }
@@ -14,23 +15,33 @@ public class AttackState: InterfaceEnemyState {
         Eat();
     }
 
+    /*======================State Functions======================*/
+
     public void Eat() {
-        enemy.navMeshAgent.Stop();
+        enemy.navMeshAgent.ResetPath();
         eatTimer += Time.deltaTime;
 
-        if (eatTimer >= enemy.eatDuration) {
+        if ( eatTimer >= enemy.eatDuration ) {
             ToAlertState();
         }
     }
 
-    public void OnTriggerEnter(Collider other) //detects if player is hit
+    /*======================Collision/Trigger======================*/
+
+    public void OnTriggerEnter( Collider other ) //detects if player is hit
     {
 
     }
 
+    public void OnTriggerStay( Collider other ) {
+        throw new NotImplementedException();
+    }
+
+    /*======================Switch State======================*/
+
     public void ToPatrolState() // do nothing
     {
-        
+
     }
 
     public void ToAlertState() //  serch for player
