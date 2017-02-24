@@ -27,10 +27,9 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //Debug.Log(navMeshAgent.remainingDistance);
+        // Stopping the rabbits from moving
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance &&
             (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f) && stopMovement) {
-            Debug.Log("Idleing");
             myAnimator.Play("Idle");    // Start playing idle animation
             stopMovement = false;       // Stop this block of code from running until needed again
             SneakSound.Stop();
@@ -49,7 +48,6 @@ public class PlayerMovement : MonoBehaviour {
             gameObject.layer = 0;
         }
         myAnimator.Play("Sneak");               // Start playing sneak animation
-        Debug.Log("Sneaking");
         PlaySound(SneakSound);
         navMeshAgent.destination = dest.point;  // Set destination that rabbit will follow
         navMeshAgent.Resume();                  // Start moving the rabbit towards the point
