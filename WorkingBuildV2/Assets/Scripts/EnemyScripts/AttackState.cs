@@ -34,7 +34,6 @@ public class AttackState : InterfaceEnemyState {
     }
 
     public void OnTriggerStay( Collider other ) {
-        throw new NotImplementedException();
     }
 
     /*======================Switch State======================*/

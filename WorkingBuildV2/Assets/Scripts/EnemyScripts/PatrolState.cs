@@ -62,16 +62,10 @@ public class PatrolState : InterfaceEnemyState {
 
     public void OnTriggerEnter( Collider other ) //detects if player is hit
     {
-        // if the enemy hits the player, don't we want to attack?
-        if ( other.gameObject.CompareTag("Player") ) {
-            other.GetComponent<PlayerMovement>().KillPlayer();
-            ToAttackState();
-        }
     }
 
     // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
-    void InterfaceEnemyState.OnTriggerStay( Collider other ) {
-        Debug.Log("Kill me please");
+    public void OnTriggerStay( Collider other ) {
         // Check to see if player is within view distance
         if ( other.gameObject.CompareTag("Player") ) {
             // Check if Player is not hiding

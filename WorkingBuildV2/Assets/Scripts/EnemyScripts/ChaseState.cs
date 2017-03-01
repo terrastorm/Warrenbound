@@ -56,8 +56,7 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
-    void InterfaceEnemyState.OnTriggerStay( Collider other ) {
-        Debug.Log("Kill me please");
+    public void OnTriggerStay( Collider other ) {
         // Check to see if player is within view distance
         if ( other.gameObject.CompareTag("Player") ) {
             // Check if Player is not hiding
