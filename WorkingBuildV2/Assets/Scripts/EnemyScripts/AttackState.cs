@@ -28,11 +28,6 @@ public class AttackState : InterfaceEnemyState {
 
     /*======================Collision/Trigger======================*/
 
-    public void OnTriggerEnter( Collider other ) //detects if player is hit
-    {
-
-    }
-
     public void OnTriggerStay( Collider other ) {
     }
 

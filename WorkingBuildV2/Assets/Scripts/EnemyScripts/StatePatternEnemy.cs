@@ -9,7 +9,6 @@ public class StatePatternEnemy : MonoBehaviour {
     public float eatDuration = 3f;                      // Time before enemy goes back to searching after attacking player
     public float sightRange = 20f;                      // How far enemy can see in front of them
     public Transform[] wayPoints;                       // Points to patrol
-    public Transform eyes;                              // Point where raycast starts
     public Vector3 offset = new Vector3(0, 0.5f, 0);    // Distance between eyes and player height
     public MeshRenderer meshRendererFlag;               // Object to show current state of enemy
     public Animator myAnimator;                         // Animator for wolf, used for playing animations
@@ -51,10 +50,6 @@ public class StatePatternEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         currentState.Update();
-    }
-
-    private void OnTriggerEnter( Collider other ) {
-        currentState.OnTriggerEnter(other);
     }
 
     private void OnTriggerStay (Collider other ) {

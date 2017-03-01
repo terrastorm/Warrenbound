@@ -14,32 +14,8 @@ public class PatrolState : InterfaceEnemyState {
     }
 
     public void Update() {
-        //Look();
         Patrol();
     }
-
-    /*======================State Functions======================*/
-
-    //private void Look() //Looks for player directly in front of enemy and detects if it is hit with ray from enemy eyes
-    //{
-    //    RaycastHit hit;
-
-    //    if (Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-    //        && hit.collider.CompareTag("Player")) {
-    //        enemy.chaseTarget = hit.transform;
-    //        // check to see if hit.transform is close enough to attack
-    //        // if so attack player
-    //        if (Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist) {
-    //            hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
-
-    //            enemy.transform.LookAt(hit.transform);
-    //            enemy.playerSelection.RemovePlayers();
-    //            ToAttackState();
-    //        }
-    //        // else chase seen player
-    //        else ToChaseState();
-    //    }
-    //}
 
     void Patrol() //Patrols the different waypoints
     {
@@ -60,10 +36,6 @@ public class PatrolState : InterfaceEnemyState {
 
     /*======================Collision/Trigger======================*/
 
-    public void OnTriggerEnter( Collider other ) //detects if player is hit
-    {
-    }
-
     // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
     public void OnTriggerStay( Collider other ) {
         // Check to see if player is within view distance
@@ -76,7 +48,7 @@ public class PatrolState : InterfaceEnemyState {
                 if ( Vector3.Angle(targetDir, enemy.transform.forward) <= 75 ) {
                     enemy.chaseTarget = other.transform;
 
-                    // Check to see if hit.transform is close enough to attack
+                    // Check to see if other.transform is close enough to attack
                     // If so attack player
                     if ( Vector3.Distance(other.transform.position, enemy.transform.position) <= enemy.killDist ) {
                         other.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();

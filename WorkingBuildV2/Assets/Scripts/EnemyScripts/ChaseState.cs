@@ -14,33 +14,10 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     public void Update() {
-        Look();
         Chase();
     }
 
     /*======================State Functions======================*/
-
-    private void Look() //Looks for player and detects if it is hit with the enemy eyes
-    {
-        RaycastHit hit;
-        //Vector3 enemyToTarget = ((enemy.chaseTarget.position + enemy.offset) - enemy.eyes.transform.position);
-        ////direction from the eyes to the target
-
-        if ( Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-            && hit.collider.CompareTag("Player") ) {
-            if ( Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist ) {
-                hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
-
-                enemy.transform.LookAt(hit.transform);
-                enemy.playerSelection.RemovePlayers();
-                ToAttackState();
-            }
-            enemy.chaseTarget = hit.transform;
-        } else if ( enemy.navMeshAgent.remainingDistance <= 1 ) //If didnt find anything
-          {
-            ToAlertState();
-        }
-    }
 
     private void Chase() {
         enemy.meshRendererFlag.material.color = Color.red;
@@ -50,10 +27,6 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     /*======================Collision/Trigger======================*/
-
-    public void OnTriggerEnter( Collider other ) {
-
-    }
 
     // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
     public void OnTriggerStay( Collider other ) {

@@ -15,33 +15,10 @@ public class AlertState : InterfaceEnemyState {
     }
 
     public void Update() {
-        //Look();
         Search();
     }
 
     /*======================State Functions======================*/
-
-    private void Look() //Looks for player directly in front of enemy and detects if it is hit with ray from enemy eyes
-    {
-        RaycastHit hit;
-
-        if ( Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-            && hit.collider.CompareTag("Player") ) {
-            enemy.chaseTarget = hit.transform;
-            // check to see if hit.transform is close enough to attack
-            // if so attack player
-            if ( Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist ) {
-                hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
-
-                enemy.transform.LookAt(hit.transform);
-                enemy.playerSelection.RemovePlayers();
-                ToAttackState();
-            }
-            // else chase seen player
-            ToChaseState();
-        }
-
-    }
 
     private void Search() {
         enemy.meshRendererFlag.material.color = Color.yellow;
@@ -54,15 +31,6 @@ public class AlertState : InterfaceEnemyState {
     }
 
     /*======================Collision/Trigger======================*/
-
-    public void OnTriggerEnter( Collider other ) // is this pointless?
-    {
-        //// if the enemy hits the player, don't we want to attack?
-        //if (other.gameObject.CompareTag("Player")) {
-        //    other.GetComponent<PlayerMovement>().KillPlayer();
-        //    ToAttackState();
-        //}
-    }
 
     // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
     public void OnTriggerStay( Collider other ) {
