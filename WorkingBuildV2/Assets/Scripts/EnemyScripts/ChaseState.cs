@@ -27,8 +27,7 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     /*======================Collision/Trigger======================*/
-
-    // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
+    
     public void OnTriggerStay( Collider other ) {
         // Check to see if player is within view distance
         if ( other.gameObject.CompareTag("Player") ) {
@@ -71,6 +70,7 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     public void ToAttackState() {
+        enemy.playerSelection.RemovePlayers();
         enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         enemy.myAnimator.Play("Feast");

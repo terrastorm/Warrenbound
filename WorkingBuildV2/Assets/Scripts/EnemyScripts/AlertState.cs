@@ -50,9 +50,9 @@ public class AlertState : InterfaceEnemyState {
                         other.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
                         enemy.transform.LookAt(other.transform);
                         ToAttackState();
-                    }
-                } else { // Else chase seen player
+                    } else { // Else chase seen player
                     ToChaseState();
+                    }
                 }
             }
         }
@@ -80,6 +80,7 @@ public class AlertState : InterfaceEnemyState {
     }
 
     public void ToAttackState() {
+        enemy.playerSelection.RemovePlayers();
         enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         searchTimer = 0f; //Saw the player and reset the timer

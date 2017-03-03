@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour {
         myAnimator.Play("Sneak");               // Start playing sneak animation
         PlaySound(SneakSound);
         navMeshAgent.destination = dest.point;  // Set destination that rabbit will follow
-        navMeshAgent.Resume();                  // Start moving the rabbit towards the point
         stopMovement = true;
     }
 

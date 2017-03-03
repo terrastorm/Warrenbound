@@ -8,8 +8,7 @@ public class PatrolState : InterfaceEnemyState {
     private int nextWayPoint;
     private Vector3 targetDir;
 
-    public PatrolState( StatePatternEnemy statePatternEnemy ) //Constructor
-    {
+    public PatrolState( StatePatternEnemy statePatternEnemy ) { //Constructor
         enemy = statePatternEnemy;
     }
 
@@ -17,8 +16,7 @@ public class PatrolState : InterfaceEnemyState {
         Patrol();
     }
 
-    void Patrol() //Patrols the different waypoints
-    {
+    void Patrol() { //Patrols the different waypoints
         enemy.meshRendererFlag.material.color = Color.green;
         // show that enemy has not spotted player
         enemy.navMeshAgent.destination = enemy.wayPoints[nextWayPoint].position;
@@ -54,9 +52,9 @@ public class PatrolState : InterfaceEnemyState {
                         other.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
                         enemy.transform.LookAt(other.transform);
                         ToAttackState();
-                    }
-                } else { // Else chase seen player
+                    } else { // Else chase seen player
                     ToChaseState();
+                    }
                 }
             }
         }
@@ -64,25 +62,22 @@ public class PatrolState : InterfaceEnemyState {
 
     /*======================Switch State======================*/
 
-    public void ToPatrolState() // do nothing
-    {
+    public void ToPatrolState() { // do nothing
         Debug.Log("Can't transition to same state");
     }
 
-    public void ToAlertState() //  serch for player
-    {
+    public void ToAlertState() { //  search for player
         enemy.currentState = enemy.alertState;
         enemy.myAnimator.Play("Walk");
     }
 
-    public void ToChaseState() // chase after player
-    {
+    public void ToChaseState() { // chase after player 
         enemy.myAnimator.Play("Run");
         enemy.currentState = enemy.chaseState;
         enemy.myAnimator.Play("Run");
     }
 
-    public void ToAttackState() {
+    public void ToAttackState() { // attack the player
         enemy.playerSelection.RemovePlayers();
         enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
