@@ -14,33 +14,10 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     public void Update() {
-        Look();
         Chase();
     }
 
     /*======================State Functions======================*/
-
-    private void Look() //Looks for player and detects if it is hit with the enemy eyes
-    {
-        RaycastHit hit;
-        //Vector3 enemyToTarget = ((enemy.chaseTarget.position + enemy.offset) - enemy.eyes.transform.position);
-        ////direction from the eyes to the target
-
-        if ( Physics.Raycast(enemy.eyes.transform.position, enemy.eyes.transform.forward, out hit, enemy.sightRange, 9)
-            && hit.collider.CompareTag("Player") ) {
-            if ( Vector3.Distance(hit.transform.position, enemy.transform.position) <= enemy.killDist ) {
-                hit.transform.gameObject.GetComponent<PlayerMovement>().KillPlayer();
-
-                enemy.transform.LookAt(hit.transform);
-                enemy.playerSelection.RemovePlayers();
-                ToAttackState();
-            }
-            enemy.chaseTarget = hit.transform;
-        } else if ( enemy.navMeshAgent.remainingDistance <= 1 ) //If didnt find anything
-          {
-            ToAlertState();
-        }
-    }
 
     private void Chase() {
         enemy.meshRendererFlag.material.color = Color.red;
@@ -50,14 +27,8 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     /*======================Collision/Trigger======================*/
-
-    public void OnTriggerEnter( Collider other ) {
-
-    }
-
-    // ON TRIGGER STAY, NOT COLLISION, NEED FIXING
-    void InterfaceEnemyState.OnTriggerStay( Collider other ) {
-        Debug.Log("Kill me please");
+    
+    public void OnTriggerStay( Collider other ) {
         // Check to see if player is within view distance
         if ( other.gameObject.CompareTag("Player") ) {
             // Check if Player is not hiding
@@ -99,6 +70,7 @@ public class ChaseState : InterfaceEnemyState {
     }
 
     public void ToAttackState() {
+        enemy.playerSelection.RemovePlayers();
         enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         enemy.myAnimator.Play("Feast");
