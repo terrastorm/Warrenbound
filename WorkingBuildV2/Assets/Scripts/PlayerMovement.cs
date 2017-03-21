@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour {
     [HideInInspector]
     public bool stopMovement = false;
 
-    private bool hiding = false;
-
 
     // Use this for initialization
     void Start () {
