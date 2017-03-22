@@ -8,6 +8,8 @@ public class StatePatternEnemy : MonoBehaviour {
     public float killDist;                              // Distance player can be before they are killed by wolf
     public float eatDuration = 3f;                      // Time before enemy goes back to searching after attacking player
     public float sightRange = 20f;                      // How far enemy can see in front of them
+    public float walkingSoundRange = 5f;               // How far the enemy can hear the rabbit while rabbit is walking
+    public float runningSoundRange = 10f;               // How far the enemy can hear the rabbit while rabbit is running
     public Transform[] wayPoints;                       // Points to patrol
     public Vector3 offset = new Vector3(0, 0.5f, 0);    // Distance between eyes and player height
     public MeshRenderer meshRendererFlag;               // Object to show current state of enemy

@@ -42,6 +42,10 @@ public class PatrolState : InterfaceEnemyState {
             if ( other.gameObject.layer != 8 ) {
                 // Direction of player from enemy
                 targetDir = other.transform.position - enemy.transform.position;
+                // Check to see if player is walking close enough for wolf to hear rabbit
+                if ( Vector3.Distance(other.transform.position, enemy.transform.position) <= enemy.walkingSoundRange ) {
+                    ToChaseState();
+                }
                 // Check to see if player is within view range 
                 if ( Vector3.Angle(targetDir, enemy.transform.forward) <= 75 ) {
                     enemy.chaseTarget = other.transform;
@@ -53,7 +57,7 @@ public class PatrolState : InterfaceEnemyState {
                         enemy.transform.LookAt(other.transform);
                         ToAttackState();
                     } else { // Else chase seen player
-                    ToChaseState();
+                        ToChaseState();
                     }
                 }
             }
