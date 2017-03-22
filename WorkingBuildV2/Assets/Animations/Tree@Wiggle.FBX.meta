@@ -26,7 +26,7 @@ ModelImporter:
     400016: Cylinder007
     400018: //RootNode
     4300000: Cylinder007
-    7400000: Take 001
+    7400000: Wiggle
     9500000: //RootNode
     11100000: //RootNode
     13700000: Cylinder007
@@ -50,7 +50,55 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Wiggle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007
+        weight: 1
+      - path: Bone001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007/Bone008
+        weight: 1
+      - path: Cylinder007
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

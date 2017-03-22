@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     public AudioSource SneakSound;
     public AudioSource RunSound;
     public AudioSource DeathSound;
+    public AudioSource FeastSound;
 
     [HideInInspector]
     public RaycastHit dest; // Destination that units will follow
@@ -26,20 +27,23 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         // Stopping the rabbits from moving
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance &&
-            (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f) && stopMovement) {
+            (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f) && stopMovement)
+        {
             myAnimator.Play("Idle");    // Start playing idle animation
             stopMovement = false;       // Stop this block of code from running until needed again
             SneakSound.Stop();
         }
 
-        //if (Input.GetMouseButtonDown(1)) { 
-        //    navMeshAgent.speed = 4;
-        //    navMeshAgent.acceleration = 8;
-        //    SneakMusic();
-        //}
+        // if (Input.GetMouseButtonDown(1)) {
+        // navMeshAgent.speed = 4;
+        // navMeshAgent.acceleration = 8;
+        // PlaySound(SneakSound);
+
+
     }
 
     // Used to start moving rabbits toward destination when set with PlayerSelection script
@@ -51,18 +55,21 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     //public void MoveUnitSprint() {
-    //    RunMusic();
-    //    navMeshAgent.speed = 8;
-    //    navMeshAgent.acceleration = 8;
-    //    navMeshAgent.destination = dest.point;
-    //    navMeshAgent.Resume();
-    //    myAnimator.Play("Sprint");
-    //}
+        //PlaySound(RunSound);
+       // navMeshAgent.speed = 8;
+       // navMeshAgent.acceleration = 8;
+        //navMeshAgent.destination = dest.point;
+        //navMeshAgent.Resume();
+       // myAnimator.Play("Sprint");
+   // }
+
 
     public void KillPlayer() {
         navMeshAgent.velocity = Vector3.zero;
         navMeshAgent.ResetPath();
         myAnimator.Play("Death");
+        PlaySound(DeathSound);
+        PlaySound(FeastSound);
         transform.tag = "Dead";
         transform.Find("Selected marker").gameObject.SetActive(false);
         GetComponent<BoxCollider>().isTrigger = true;

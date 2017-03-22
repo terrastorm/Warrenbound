@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class RabbitHole : MonoBehaviour {
 
@@ -35,6 +36,10 @@ public class RabbitHole : MonoBehaviour {
         {
             playerSelection = null;
             GameObject.Find("Canvas").GetComponent<EndLevelScript>().endTally = rabbitTally;
+            if (rabbitTally > 0)
+                GameObject.Find("Congrats").GetComponent<Text>().text = "Congratulations";
+            else
+                GameObject.Find("Congrats").GetComponent<Text>().text = "Try Again";
         }
     }
 
