@@ -67,7 +67,7 @@ public class menuScript : MonoBehaviour {
         StartCoroutine(DelayBackground());
         StartCoroutine(DelayCamera());
         //Debug.Log("play pls = " + acamera.IsPlaying("CameraZoom"));    
-        StartCoroutine(DelaySceneLoad("Level1"));
+        StartCoroutine(DelaySceneLoad("Tutorial Level"));
         StartCoroutine(DelayClouds());
     }
 
@@ -82,7 +82,7 @@ public class menuScript : MonoBehaviour {
             AudioListener.volume = Mathf.Lerp(currentVolume, 0, elapsedTime / delay);
             yield return null;
         }
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Tutorial Level");
     }
     public IEnumerator DelayBackground()
     {

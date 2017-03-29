@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RabbitHole : MonoBehaviour {
 
     private PlayerSelection playerSelection;
 
-    int rabbitTally = 0;
+    public int rabbitTally = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,8 @@ public class RabbitHole : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -32,15 +34,15 @@ public class RabbitHole : MonoBehaviour {
 
     void OnLevelWasLoaded(int Level)
     {
-        if(Level == 2)
-        {
-            playerSelection = null;
-            GameObject.Find("Canvas").GetComponent<EndLevelScript>().endTally = rabbitTally;
-            if (rabbitTally > 0)
-                GameObject.Find("Congrats").GetComponent<Text>().text = "Congratulations";
-            else
-                GameObject.Find("Congrats").GetComponent<Text>().text = "Try Again";
-        }
+        //if(Level == 2)
+        //{
+        //    playerSelection = null;
+        //    GameObject.Find("Canvas").GetComponent<EndLevelScript>().endTally = rabbitTally;
+        //    if (rabbitTally > 0)
+        //        GameObject.Find("Congrats").GetComponent<Text>().text = "Congratulations";
+        //    else
+        //        GameObject.Find("Congrats").GetComponent<Text>().text = "Try Again";
+        //}
     }
 
 }

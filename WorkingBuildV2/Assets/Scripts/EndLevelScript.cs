@@ -40,7 +40,13 @@ public class EndLevelScript : MonoBehaviour
     }
     public void ReloadGame()
     {
-        SceneManager.LoadScene("Level1");
+        
+        //if(SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.LoadScene("Tutorial Level");
+       // if (SceneManager.GetActiveScene().buildIndex == 2)
+           // SceneManager.LoadScene("Level2");
+        //if (SceneManager.GetActiveScene().buildIndex == 3)
+        //    SceneManager.LoadScene("Level3")
     }
     public void ExitGame()
     {
