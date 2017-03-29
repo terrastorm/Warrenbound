@@ -21,9 +21,11 @@ public class ChaseState : InterfaceEnemyState {
 
     private void Chase() {
         enemy.meshRendererFlag.material.color = Color.red;
-        enemy.navMeshAgent.destination = enemy.chaseTarget.position;
-        enemy.navMeshAgent.Resume();
-
+        if (enemy.chaseTarget != null) {
+            enemy.navMeshAgent.destination = enemy.chaseTarget.position;
+        } else {
+            ToAlertState();
+        }
     }
 
     /*======================Collision/Trigger======================*/
