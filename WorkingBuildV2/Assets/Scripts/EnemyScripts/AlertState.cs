@@ -51,7 +51,7 @@ public class AlertState : InterfaceEnemyState {
                         enemy.transform.LookAt(other.transform);
                         ToAttackState();
                     } else { // Else chase seen player
-                    ToChaseState();
+                        ToChaseState();
                     }
                 }
             }
