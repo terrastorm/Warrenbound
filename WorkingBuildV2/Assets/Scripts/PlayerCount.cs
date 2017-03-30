@@ -29,14 +29,15 @@ public class PlayerCount : MonoBehaviour {
 
         SetCountText();
 
+        //Controlls scene switching
         if (playerCurrentCount <= 0)
         {
             if (rabbitTally < playerGoal)
                 SceneManager.LoadScene("EndLevel");
             else if (SceneManager.GetActiveScene().buildIndex == 1 && rabbitTally >= playerGoal)
                 SceneManager.LoadScene("Level2");
-            //else if(SceneManager.GetActiveScene().buildIndex == 2 && rabbitTally >= playerGoal)  if we add a third level
-            //    SceneManager.LoadScene("Level3");
+            else if(SceneManager.GetActiveScene().buildIndex == 2 && rabbitTally >= playerGoal)
+                SceneManager.LoadScene("Title");
         }
     }
 

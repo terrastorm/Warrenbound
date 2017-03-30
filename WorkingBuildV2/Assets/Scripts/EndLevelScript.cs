@@ -41,12 +41,13 @@ public class EndLevelScript : MonoBehaviour
     public void ReloadGame()
     {
         
-        //if(SceneManager.GetActiveScene().buildIndex == 1)
-            SceneManager.LoadScene("Tutorial Level");
-       // if (SceneManager.GetActiveScene().buildIndex == 2)
-           // SceneManager.LoadScene("Level2");
-        //if (SceneManager.GetActiveScene().buildIndex == 3)
-        //    SceneManager.LoadScene("Level3")
+        if(GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 1) 
+            SceneManager.LoadScene("Level1");
+        if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 2)
+            SceneManager.LoadScene("Level2");
+        //if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 3)
+        //    SceneManager.LoadScene("Level3");
+
     }
     public void ExitGame()
     {
