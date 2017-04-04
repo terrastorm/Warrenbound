@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class OutlineGlowBush : MonoBehaviour {
 
-    public Animation BushGlow;
-    public Animator anime;   
+    public Animator Animation;   
     private Ray ray;
     private RaycastHit hit;
     private bool isPlaying = false;
@@ -15,27 +14,24 @@ public class OutlineGlowBush : MonoBehaviour {
     void Start()
     {
         baseShader = GetComponent<Shader>();
-        anime = GetComponent<Animator>();
-        BushGlow = GetComponent<Animation>();
+        Animation = GetComponent<Animator>();
     }
 
     void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //As long as the mouse hovers over object
-        if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Tree"))
-        {
-            BushGlow.Play();
-            //Debug.Log("Over object");
+        if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Bush"))
+        {         
+            Debug.Log("Over object");
             isPlaying = true;
-            //anime.Play("OutlineGlowBush");           
-            anime.SetBool("IsPlaying", true);                 
+            Animation.Play("OutlineGlowBush");           
+            Animation.SetBool("IsPlaying", true);                 
         }
         else //As long as the mouse is not hovering over the object
         {
-            BushGlow.Stop();
-            //Debug.Log("Not over object");
-            //anime.SetBool("IsPlaying", false);            
+            Debug.Log("Not over object");
+            Animation.SetBool("IsPlaying", false);            
         }
 
     }

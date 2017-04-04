@@ -14,7 +14,6 @@ public class StatePatternEnemy : MonoBehaviour {
     public Vector3 offset = new Vector3(0, 0.5f, 0);    // Distance between eyes and player height
     public MeshRenderer meshRendererFlag;               // Object to show current state of enemy
     public Animator myAnimator;                         // Animator for wolf, used for playing animations
-    public AudioSource Feast;                           //Used to play the feasting noise
     public AudioSource ChaseMusic;                      //used to play the chase music
 
     [HideInInspector]

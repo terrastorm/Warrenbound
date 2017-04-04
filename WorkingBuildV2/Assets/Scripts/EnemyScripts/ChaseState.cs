@@ -68,7 +68,7 @@ public class ChaseState : InterfaceEnemyState {
 
     public void ToChaseState() // do nothing
     {
-
+       
     }
 
     public void ToAttackState() {
