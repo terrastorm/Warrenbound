@@ -53,4 +53,9 @@ public class AttackState : InterfaceEnemyState {
     public void ToAttackState() {
 
     }
+
+    public void ToDistractState() {
+        enemy.currentState = enemy.distractState;
+        enemy.myAnimator.Play("Run");
+    }
 }

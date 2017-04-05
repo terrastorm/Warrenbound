@@ -22,15 +22,13 @@ public class OutlineGlowBush : MonoBehaviour {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //As long as the mouse hovers over object
         if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Bush"))
-        {         
-            Debug.Log("Over object");
+        {
             isPlaying = true;
             Animation.Play("OutlineGlowBush");           
             Animation.SetBool("IsPlaying", true);                 
         }
         else //As long as the mouse is not hovering over the object
         {
-            Debug.Log("Not over object");
             Animation.SetBool("IsPlaying", false);            
         }
 

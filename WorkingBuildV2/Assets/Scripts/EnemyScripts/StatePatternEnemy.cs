@@ -5,6 +5,7 @@ public class StatePatternEnemy : MonoBehaviour {
 
     public float searchingTurnSpeed = 120f;             // How fast enemy can turn around while patrolling
     public float searchingDuration = 4f;                // Time before enemy stops searching for player and patrols again
+    public float distractDuration = 4f;
     public float killDist;                              // Distance player can be before they are killed by wolf
     public float eatDuration = 3f;                      // Time before enemy goes back to searching after attacking player
     public float sightRange = 20f;                      // How far enemy can see in front of them
@@ -29,6 +30,8 @@ public class StatePatternEnemy : MonoBehaviour {
     [HideInInspector]
     public AttackState attackState;               // Functions for attacking player
     [HideInInspector]
+    public DistractState distractState;               // Functions for distracting enemy
+    [HideInInspector]
     public UnityEngine.AI.NavMeshAgent navMeshAgent;             // Move the enemy
     [HideInInspector]
     public PlayerSelection playerSelection;       // Delete rabbits from list when dead
@@ -38,6 +41,7 @@ public class StatePatternEnemy : MonoBehaviour {
         alertState = new AlertState(this);
         patrolState = new PatrolState(this);
         attackState = new AttackState(this);
+        distractState = new DistractState(this);
         playerSelection = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerSelection>();
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }

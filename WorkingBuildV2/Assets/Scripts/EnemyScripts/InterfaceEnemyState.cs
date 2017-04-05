@@ -13,4 +13,6 @@ public interface InterfaceEnemyState {
     void ToChaseState();
 
     void ToAttackState();
+
+    void ToDistractState();
 }

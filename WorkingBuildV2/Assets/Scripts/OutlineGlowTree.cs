@@ -4,35 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OutlineGlowTree : MonoBehaviour {
-
-
-
-    //public Material RegularMaterial;
-
-    //public Material OutlinedMaterial;
     public Animator anime;
     public AnimatorClipInfo TreeAnim;
     public AnimationClip Wiggle;
     public Animation WiggleAnim;
-    private Animation BirdFly;
     public AudioSource TreeRuffle;
-    //public AnimationClip OutlineGlowReverse;
 
     private Ray ray;
     private RaycastHit hit;
     private bool isPlaying = false;
     private Shader baseShader;
+    
+    public float distractTimer = 4f;
+    private float timer = 0f;
+    public float waitTimer = 4f;
+    private float wait = 0f;
 
     void Start()
     {
         baseShader = GetComponent<Shader>();
-        //OutlinedMaterial = new Material(Shader.Find("Outlined/Silhouetted Diffuse"));
         anime = GetComponent<Animator>();
         WiggleAnim = GetComponent<Animation>();
-        BirdFly = GetComponent<Animation>();
         TreeRuffle = GetComponent<AudioSource>();
-        // anime.AddClip(TreeVar1, "TreeVar1");
-        //TreeAnim = 
 
     }
 
@@ -42,33 +35,40 @@ public class OutlineGlowTree : MonoBehaviour {
         //As long as the mouse hovers over object
         if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Tree"))
         {
-            Debug.Log("Over object");
             isPlaying = true;
             anime.Play("OutlineGlow");
             anime.Play("Wiggle");
             anime.SetBool("IsPlaying", true);
-            //hit.collider.gamObject.renderer.material.shader = Shader.Find("Self-Illuminated Diffuse");
-            //GetComponent<Renderer>().material = OutlinedMaterial; 
-           if (Input.GetMouseButtonDown(0))
+           if (Input.GetMouseButton(0) && gameObject.tag != "Distract")
            {
-                //GetComponent<Animation>().Play("Take 001");
-           
+                gameObject.tag = "Distract";
                 WiggleAnim.Play();
                 TreeRuffle.Play();
             }
-            else if (Input.GetMouseButtonUp(0))
-           {
-                WiggleAnim.Stop();
-           }
         }
         else //As long as the mouse is not hovering over the object
         {
-            Debug.Log("Not over object");
             anime.SetBool("IsPlaying", false);
-            //Material material = new Material(Shader.Find("Standard"));
-            //material.color = Color.white;
-            //GetComponent<Renderer>().material = RegularMaterial;
         }
 
+        // Timing how long to keep wolf distracted
+        if (gameObject.tag == "Distract") {
+            timer += Time.deltaTime;
+
+            if (timer >= distractTimer) {
+                gameObject.tag = "Wait";
+                timer = 0;
+            }
+        }
+
+        // Timing how long to wait before next distraction time
+        if ( gameObject.tag == "Wait" ) {
+            wait += Time.deltaTime;
+
+            if ( wait >= waitTimer ) {
+                gameObject.tag = "Tree";
+                wait = 0;
+            }
+        }
     }
 }

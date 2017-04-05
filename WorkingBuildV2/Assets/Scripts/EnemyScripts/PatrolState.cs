@@ -35,6 +35,12 @@ public class PatrolState : InterfaceEnemyState {
     /*======================Collision/Trigger======================*/
     
     public void OnTriggerStay( Collider other ) {
+        // Check to see if distraction is happening
+        if (other.gameObject.CompareTag("Distract")) {
+            enemy.chaseTarget = other.transform;
+            enemy.navMeshAgent.destination = enemy.chaseTarget.position;
+            ToDistractState();
+        }
         // Check to see if player is within view distance
         if ( other.gameObject.CompareTag("Player") ) {
             // Check if Player is not hiding
@@ -85,5 +91,10 @@ public class PatrolState : InterfaceEnemyState {
         enemy.navMeshAgent.ResetPath();
         enemy.currentState = enemy.attackState;
         enemy.myAnimator.Play("Feast");
+    }
+
+    public void ToDistractState() {
+        enemy.currentState = enemy.distractState;
+        enemy.myAnimator.Play("Run");
     }
 }
