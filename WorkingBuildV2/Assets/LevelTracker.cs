@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelTracker : MonoBehaviour {
 
     public int lastScene;
+    public Scene currentScene;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,11 @@ public class LevelTracker : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
+
+        if (Input.GetKey(KeyCode.R)){
+            currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.buildIndex);
+        }
+        //Debug.Log(currentScene.buildIndex);
     }
 }

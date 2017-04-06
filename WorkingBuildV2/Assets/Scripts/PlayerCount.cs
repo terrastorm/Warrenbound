@@ -38,6 +38,8 @@ public class PlayerCount : MonoBehaviour {
                 SceneManager.LoadScene("Level2");
             else if(SceneManager.GetActiveScene().buildIndex == 2 && rabbitTally >= playerGoal)
                 SceneManager.LoadScene("Title");
+
+            GameObject.Find("RabbitHoleCollider").GetComponent<RabbitHole>().rabbitTally = 0;
         }
     }
 

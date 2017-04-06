@@ -7,7 +7,7 @@ public class RabbitHole : MonoBehaviour {
 
     private PlayerSelection playerSelection;
 
-    public int rabbitTally = 0;
+    public int rabbitTally;
 
 
 	// Use this for initialization
