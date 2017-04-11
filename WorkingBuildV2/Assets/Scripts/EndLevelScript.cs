@@ -46,7 +46,7 @@ public class EndLevelScript : MonoBehaviour
         if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 2)
             SceneManager.LoadScene("Level2");
         //if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 3)
-        //    SceneManager.LoadScene("Level3");
+            //SceneManager.LoadScene("Level3");
 
     }
     public void ExitGame()
