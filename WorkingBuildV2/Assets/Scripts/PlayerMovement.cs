@@ -77,10 +77,9 @@ public class PlayerMovement : MonoBehaviour {
 
     //==============================HIDING==============================
     void OnTriggerEnter( Collider col ) {
-        if ( col.transform.tag == "Bush" ) {
+        if ( col.transform.tag == "Bush" && gameObject.tag == "Player" ) {
             navMeshAgent.ResetPath();
             gameObject.layer = 8;
-            Debug.Log(gameObject.layer);
         }
     }
 

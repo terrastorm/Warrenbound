@@ -22,11 +22,10 @@ public class OutlineGlowTree : MonoBehaviour {
 
     void Start()
     {
-        baseShader = GetComponent<Shader>();
-        anime = GetComponent<Animator>();
-        WiggleAnim = GetComponent<Animation>();
-        TreeRuffle = GetComponent<AudioSource>();
-
+        baseShader = gameObject.GetComponent<Shader>();
+        anime = gameObject.GetComponent<Animator>();
+        WiggleAnim = gameObject.GetComponent<Animation>();
+        TreeRuffle = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()

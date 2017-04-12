@@ -9,11 +9,19 @@ public class RabbitHole : MonoBehaviour {
 
     public int rabbitTally;
 
+    public static RabbitHole instance = null;
+
 
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
         playerSelection = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerSelection>();
+
+        if (instance == null) {
+            instance = this;
+        } else if (instance != this) {
+            Destroy(gameObject);
+        }
     }
 	
 	// Update is called once per frame

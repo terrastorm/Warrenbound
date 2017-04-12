@@ -14,12 +14,17 @@ public class EndLevelScript : MonoBehaviour
     public Button Reload;
     public int endTally;
     public Text textEndTally;
+
+    private LevelTracker levelTracker;
+
     // Use this for initialization
     public void Start()
     {
         textEndTally.text = "Score: " + endTally.ToString();
         AudioListener.volume = 1.0f;
         StartCoroutine(DelayAudio());
+
+        levelTracker = GameObject.Find("LevelTracker").GetComponent<LevelTracker>();
     }
 
     public IEnumerator DelayAudio()
@@ -41,11 +46,11 @@ public class EndLevelScript : MonoBehaviour
     public void ReloadGame()
     {
         
-        if(GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 1) 
+        if(levelTracker.lastScene == 1) 
             SceneManager.LoadScene("Level1");
-        if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 2)
+        if (levelTracker.lastScene == 2)
             SceneManager.LoadScene("Level2");
-        //if (GameObject.Find("LevelTracker").GetComponent<LevelTracker>().lastScene == 3)
+        //if (levelTracker.lastScene == 3)
             //SceneManager.LoadScene("Level3");
 
     }
