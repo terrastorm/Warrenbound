@@ -44,7 +44,7 @@ public class DistractState : InterfaceEnemyState {
     public void ToAlertState() // do nothing
     {
         enemy.currentState = enemy.alertState;
-        enemy.myAnimator.Play("Walk");
+        enemy.myAnimator.Play("Searching");
     }
 
     public void ToChaseState() // player seen, chase player

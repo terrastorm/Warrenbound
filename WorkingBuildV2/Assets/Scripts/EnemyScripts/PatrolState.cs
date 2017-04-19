@@ -77,7 +77,7 @@ public class PatrolState : InterfaceEnemyState {
 
     public void ToAlertState() { //  search for player
         enemy.currentState = enemy.alertState;
-        enemy.myAnimator.Play("Walk");
+        enemy.myAnimator.Play("Searching");
     }
 
     public void ToChaseState() { // chase after player 

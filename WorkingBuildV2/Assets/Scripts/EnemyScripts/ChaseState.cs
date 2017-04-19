@@ -69,7 +69,7 @@ public class ChaseState : InterfaceEnemyState {
     public void ToAlertState() // lost sight of player, start searching again
     {
         enemy.currentState = enemy.alertState;
-        enemy.myAnimator.Play("Walk");
+        enemy.myAnimator.Play("Searching");
     }
 
     public void ToChaseState() // do nothing

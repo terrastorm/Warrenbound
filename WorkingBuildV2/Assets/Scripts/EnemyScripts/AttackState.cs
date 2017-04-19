@@ -42,7 +42,7 @@ public class AttackState : InterfaceEnemyState {
     {
         eatTimer = 0;
         enemy.currentState = enemy.alertState;
-        enemy.myAnimator.Play("Walk");
+        enemy.myAnimator.Play("Searching");
     }
 
     public void ToChaseState() // chase after player
