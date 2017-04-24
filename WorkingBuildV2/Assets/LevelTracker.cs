@@ -34,7 +34,7 @@ public class LevelTracker : MonoBehaviour {
     }
 
     void OnLevelWasLoaded () {
-        if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 4) { //if the scene is not the title or end screen
+        if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 3 && SceneManager.GetActiveScene().buildIndex != 4) { //if the scene is not the title or end screen
             Debug.Log(SceneManager.GetActiveScene().buildIndex);
             lastScene = SceneManager.GetActiveScene().buildIndex;
             Debug.Log(name + " " + lastScene);

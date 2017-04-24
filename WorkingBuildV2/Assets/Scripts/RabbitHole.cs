@@ -40,17 +40,12 @@ public class RabbitHole : MonoBehaviour {
         }
     }
 
-    void OnLevelWasLoaded(int Level)
+    void OnLevelWasLoaded()
     {
-        //if(Level == 2)
-        //{
-        //    playerSelection = null;
-        //    GameObject.Find("Canvas").GetComponent<EndLevelScript>().endTally = rabbitTally;
-        //    if (rabbitTally > 0)
-        //        GameObject.Find("Congrats").GetComponent<Text>().text = "Congratulations";
-        //    else
-        //        GameObject.Find("Congrats").GetComponent<Text>().text = "Try Again";
-        //}
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            transform.position = new Vector3(62, 2, 179);
+        }
     }
 
 }

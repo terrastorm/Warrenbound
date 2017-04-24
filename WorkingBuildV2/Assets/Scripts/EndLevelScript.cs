@@ -45,8 +45,8 @@ public class EndLevelScript : MonoBehaviour
     }
     public void ReloadGame()
     {
-        
-        if(levelTracker.lastScene == 1) 
+
+        if (levelTracker.lastScene == 1)        
             SceneManager.LoadScene("Level1");
         if (levelTracker.lastScene == 2)
             SceneManager.LoadScene("Level2");
