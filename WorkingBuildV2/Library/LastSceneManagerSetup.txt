@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/BeatGame.unity
+- path: Assets/_Scenes/TutorialScene.unity
   isLoaded: 1
   isActive: 1
