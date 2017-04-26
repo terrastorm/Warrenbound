@@ -25,6 +25,10 @@ public class menuScript : MonoBehaviour {
         quitMenu.enabled = false;
     }
 
+    public void HowTo() {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
 	public void ExitPress()
 	{
 		quitMenu.enabled = true;

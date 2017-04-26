@@ -16,9 +16,9 @@ public class OutlineGlowTree : MonoBehaviour {
     private Shader baseShader;
     
     public float distractTimer = 4f;
-    private float timer = 0f;
+    public float timer = 0f;
     public float waitTimer = 4f;
-    private float wait = 0f;
+    public float wait = 0f;
 
     void Start()
     {
